@@ -1,13 +1,15 @@
 package Backend;
 
+
+import javax.management.relation.Role;
 import java.util.ArrayList;
 
-public class AdminRole {
+public class AdminRole implements FileNames {
 
     public TrainerDatabase database;
 
     public AdminRole() {
-        this.database = new TrainerDatabase("Trainer");
+        this.database = new TrainerDatabase(TRAINER_FILENAME);
     }
 
     public boolean addTrainer(String trainerId, String name, String email, String specialty, String phoneNumber) {

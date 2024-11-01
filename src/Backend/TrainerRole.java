@@ -5,16 +5,16 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 
-public class TrainerRole {
+public class TrainerRole implements FileNames{
 
     private MemberDatabase memberDatabase;
     private ClassDatabase classDatabase;
     private MemberClassRegistrationDatabase registrationDatabase;
 
     public TrainerRole() {
-        this.memberDatabase = new MemberDatabase("Members");
-        this.classDatabase = new ClassDatabase("Class");
-        this.registrationDatabase = new MemberClassRegistrationDatabase("Registrations");
+        this.memberDatabase = new MemberDatabase(MEMBER_FILENAME);
+        this.classDatabase = new ClassDatabase(CLASS_FILENAME);
+        this.registrationDatabase = new MemberClassRegistrationDatabase(REGISTRATION_FILENAME);
 
     }
 

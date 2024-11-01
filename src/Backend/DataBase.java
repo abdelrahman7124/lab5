@@ -17,7 +17,7 @@ public abstract class DataBase<T extends Interface> {
     protected ArrayList<T> records = new ArrayList<>();
 
     public DataBase(String filename) {
-        this.filename = filename + ".txt";
+        this.filename = filename;
         readFromFile();
     }
 
