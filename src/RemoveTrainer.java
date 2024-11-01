@@ -14,6 +14,7 @@ public class RemoveTrainer extends JFrame {
         setTitle("Remove Trainer");
         setSize(500,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

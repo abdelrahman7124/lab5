@@ -16,10 +16,12 @@ public class AdminRolePage extends JFrame {
     public AdminRolePage() {
         setContentPane(container);
         setSize(500,500);
+        setLocationRelativeTo(null);
         setTitle("Admin Role");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         AddTrainer addTrainer = new AddTrainer(role,this);
         RemoveTrainer removeTrainer = new RemoveTrainer(role,this);
+
         addTrainerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,7 +40,9 @@ public class AdminRolePage extends JFrame {
         viewTrainersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                ViewTrainers viewTrainers = new ViewTrainers(role,role.getListOfTrainers());
+                viewTrainers.setVisible(true);
+                //setVisible(false);
             }
         });
         logoutButton.addActionListener(new ActionListener() {

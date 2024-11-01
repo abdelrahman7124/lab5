@@ -12,6 +12,7 @@ public class HomePage extends JFrame {
         setContentPane(container);
         setSize(500,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         adminButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -17,6 +17,7 @@ public class AddTrainer extends JFrame {
         setTitle("Add Trainer");
         setContentPane(container);
         setSize(500,500);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addButton.addActionListener(new ActionListener() {
             @Override

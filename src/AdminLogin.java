@@ -13,6 +13,7 @@ public class AdminLogin extends JFrame implements LoginCredentials {
         setContentPane(container);
         setSize(500,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
 
         loginButton.addActionListener(new ActionListener() {
