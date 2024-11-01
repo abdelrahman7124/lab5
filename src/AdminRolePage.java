@@ -14,10 +14,28 @@ public class AdminRolePage extends JFrame {
     AdminRole role = new AdminRole();
 
     public AdminRolePage() {
+        container = new JPanel();
+        addTrainerButton = new JButton("Add Trainer");
+        removeTrainerButton = new JButton("Remove Trainer");
+        viewTrainersButton = new JButton("View Trainers");
+        logoutButton = new JButton("Logout");
+
+        container.setLayout(null);
+
+        addTrainerButton.setBounds(170, 50, 150, 50);
+        removeTrainerButton.setBounds(170, 150, 150, 50);
+        viewTrainersButton.setBounds(170, 250, 150, 50);
+        logoutButton.setBounds(170, 350, 150, 50);
+
+        container.add(addTrainerButton);
+        container.add(removeTrainerButton);
+        container.add(viewTrainersButton);
+        container.add(logoutButton);
+
+        setTitle("Admin Role");
         setContentPane(container);
         setSize(500,500);
         setLocationRelativeTo(null);
-        setTitle("Admin Role");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         AddTrainer addTrainer = new AddTrainer(role,this);
         RemoveTrainer removeTrainer = new RemoveTrainer(role,this);

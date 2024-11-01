@@ -11,6 +11,12 @@ public class ViewTrainers extends JFrame {
 
 
     public ViewTrainers(AdminRole role,ArrayList<Trainer> trainers) {
+        container = new JPanel();
+        table1 = new JTable();
+        scrollPane = new JScrollPane(table1);
+        //container.setLayout(null);
+        container.add(scrollPane);
+
         // Initialize the GUI components
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Id");
@@ -19,7 +25,6 @@ public class ViewTrainers extends JFrame {
         model.addColumn("Speciality");
         model.addColumn("Phone Number");
 
-        //ArrayList<Trainer> trainers = role.getListOfTrainers();
 
         for (Trainer trainer : trainers) {
             model.addRow(new Object[]{trainer.getId(), trainer.getName(), trainer.getEmail(), trainer.getSpeciality(), trainer.getPhoneNumber()});

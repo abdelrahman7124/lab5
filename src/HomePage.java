@@ -5,9 +5,22 @@ import java.awt.event.ActionListener;
 public class HomePage extends JFrame {
     private JPanel container;
     private JButton adminButton;
-    private JButton trianerButton;
+    private JButton trainerButton;
 
     public HomePage() {
+        this.container = new JPanel();
+
+        container.setLayout(null);
+
+        adminButton = new JButton("Admin");
+        trainerButton = new JButton("Trainer");
+
+        adminButton.setBounds(185, 100, 100, 50);
+        trainerButton.setBounds(185, 300, 100, 50);
+
+        container.add(adminButton);
+        container.add(trainerButton);
+
         setVisible(true);
         setContentPane(container);
         setSize(500,500);
@@ -21,7 +34,7 @@ public class HomePage extends JFrame {
                 setVisible(false);
             }
         });
-        trianerButton.addActionListener(new ActionListener() {
+        trainerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 

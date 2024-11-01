@@ -14,6 +14,49 @@ public class AddTrainer extends JFrame {
 
 
     public AddTrainer(AdminRole role,AdminRolePage adminRolePage) {
+        IdField1 = new JTextField();
+        NameField2 = new JTextField();
+        EmailField3 = new JTextField();
+        SpecialityField4 = new JTextField();
+        NumberField5 = new JTextField();
+        addButton = new JButton("Add Trainer");
+        container = new JPanel();
+
+        JLabel idLabel = new JLabel("ID");
+        JLabel nameLabel = new JLabel("Name");
+        JLabel emailLabel = new JLabel("Email");
+        JLabel specialityLabel = new JLabel("Speciality");
+        JLabel numberLabel = new JLabel("Phone Number");
+
+        container.setLayout(null);
+
+        idLabel.setBounds(100,100,150,30);
+        nameLabel.setBounds(100,150,150,30);
+        emailLabel.setBounds(100,200,150,30);
+        specialityLabel.setBounds(100,250,150,30);
+        numberLabel.setBounds(100,300,150,30);
+
+        IdField1.setBounds(300,100,150,20);
+        NameField2.setBounds(300,150,150,20);
+        EmailField3.setBounds(300,200,150,20);
+        SpecialityField4.setBounds(300,250,150,20);
+        NumberField5.setBounds(300,300,150,20);
+
+        addButton.setBounds(170,400,150,30);
+
+        container.add(idLabel);
+        container.add(nameLabel);
+        container.add(emailLabel);
+        container.add(specialityLabel);
+        container.add(numberLabel);
+        container.add(IdField1);
+        container.add(NameField2);
+        container.add(EmailField3);
+        container.add(SpecialityField4);
+        container.add(NumberField5);
+        container.add(addButton);
+
+
         setTitle("Add Trainer");
         setContentPane(container);
         setSize(500,500);
