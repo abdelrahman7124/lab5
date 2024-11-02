@@ -37,7 +37,9 @@ public class HomePage extends JFrame {
         trainerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                TrainerLogin trainerLogin = new TrainerLogin();
+                trainerLogin.setVisible(true);
+                setVisible(false);
             }
         });
     }
