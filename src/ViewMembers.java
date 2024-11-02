@@ -8,9 +8,15 @@ import java.util.ArrayList;
 public class ViewMembers extends JFrame {
     private JPanel container;
     private JTable table1;
-
+    private JScrollPane scrollPane;
 
     public ViewMembers(TrainerRole role, ArrayList<Member> members) {
+        container = new JPanel();
+        table1 = new JTable();
+        scrollPane = new JScrollPane(table1);
+
+        container.add(scrollPane);
+
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Id");
         model.addColumn("Name");
