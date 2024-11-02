@@ -3,15 +3,14 @@ import Backend.TrainerRole;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.*;
 import java.util.ArrayList;
 
-public class ViewMember extends JFrame {
+public class ViewMembers extends JFrame {
     private JPanel container;
     private JTable table1;
 
 
-    public ViewMember(TrainerRole role, ArrayList<Member> members) {
+    public ViewMembers(TrainerRole role, ArrayList<Member> members) {
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Id");
         model.addColumn("Name");
