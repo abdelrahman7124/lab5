@@ -14,6 +14,49 @@ public class AddClass extends JFrame {
     private JButton addClassButton;
 
     public AddClass(TrainerRole role, TrainerRolePage trainerRolePage) {
+        classIdTextField = new JTextField();
+        classNameTextField  = new JTextField();
+        trainerIdTextField = new JTextField();
+        durationTextField = new JTextField();
+        maxParticipantsTextField = new JTextField();
+        addClassButton = new JButton("Add Class");
+
+        container = new JPanel();
+
+        JLabel classId = new JLabel("Class Id");
+        JLabel className = new JLabel("Class Name");
+        JLabel trainerId = new JLabel("Trainer Id");
+        JLabel duration = new JLabel("Duration");
+        JLabel maxParticipants = new JLabel("Max Participants");
+
+        container.setLayout(null);
+
+        classId.setBounds(100,100,150,30);
+        className.setBounds(100,150,150,30);
+        trainerId.setBounds(100,200,150,30);
+        duration.setBounds(100,250,150,30);
+        maxParticipants.setBounds(100,300,150,30);
+
+        classIdTextField.setBounds(300,100,150,20);
+        classNameTextField.setBounds(300,150,150,20);
+        trainerIdTextField.setBounds(300,200,150,20);
+        durationTextField.setBounds(300,250,150,20);
+        maxParticipantsTextField.setBounds(300,300,150,20);
+
+        addClassButton.setBounds(170,400,150,30);
+
+        container.add(classId);
+        container.add(className);
+        container.add(trainerId);
+        container.add(duration);
+        container.add(maxParticipants);
+        container.add(classIdTextField);
+        container.add(classNameTextField);
+        container.add(trainerIdTextField);
+        container.add(durationTextField);
+        container.add(maxParticipantsTextField);
+        container.add(addClassButton);
+
         setContentPane(container);
         setSize(500, 500);
         setLocationRelativeTo(null);
