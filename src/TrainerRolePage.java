@@ -12,19 +12,47 @@ public class TrainerRolePage extends JFrame{
     private JButton viewClassesButton;
     private JButton registerMemberForClassButton;
     private JButton cancelRegistrationButton;
-    private JButton logoutButton;
     private JButton viewRegistrationsButton;
+    private JButton logoutButton;
 
     TrainerRole role = new TrainerRole();
 
     AddMember addMember = new AddMember(role, this);
     AddClass addClass = new AddClass(role, this);
-    ViewClasses viewClasses = new ViewClasses(role, this);
     RegisterMemberForClass registerMemberForClass = new RegisterMemberForClass(role, this);
     CancelRegistration cancelRegistration = new CancelRegistration(role, this);
-    ViewRegistrations viewRegistrations = new ViewRegistrations(role, this);
 
     public TrainerRolePage() {
+        addMemberButton = new JButton("Add Member");
+        viewMembersButton = new JButton("View Members");
+        addClassButton = new JButton("Add Class");
+        viewClassesButton = new JButton("View Classes");
+        registerMemberForClassButton = new JButton("Register Member for Class");
+        cancelRegistrationButton = new JButton("Cancel Registration");
+        viewRegistrationsButton = new JButton("View Registrations");
+        logoutButton = new JButton("Logout");
+
+        container = new JPanel();
+        container.setLayout(null);
+
+        addMemberButton.setBounds(170, 50, 150, 50);
+        viewMembersButton.setBounds(170, 100, 150, 50);
+        addClassButton.setBounds(170, 150, 150, 50);
+        viewClassesButton.setBounds(170, 200, 150, 50);
+        registerMemberForClassButton.setBounds(170, 250, 150, 50);
+        cancelRegistrationButton.setBounds(170, 300, 150, 50);
+        viewRegistrationsButton.setBounds(170, 350, 150, 50);
+        logoutButton.setBounds(170, 50, 400, 50);
+
+        container.add(addMemberButton);
+        container.add(viewMembersButton);
+        container.add(addClassButton);
+        container.add(viewClassesButton);
+        container.add(registerMemberForClassButton);
+        container.add(cancelRegistrationButton);
+        container.add(viewRegistrationsButton);
+        container.add(logoutButton);
+
         setContentPane(container);
         setSize(500, 500);
         setLocationRelativeTo(null);
@@ -58,8 +86,8 @@ public class TrainerRolePage extends JFrame{
     viewClassesButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+            ViewClasses viewClasses = new ViewClasses(role, role.getListOfClasses());
             viewClasses.setVisible(true);
-
         }
     });
 
@@ -82,6 +110,7 @@ public class TrainerRolePage extends JFrame{
     viewRegistrationsButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+            ViewRegistrations viewRegistrations = new ViewRegistrations(role, role.getListOfRegistrations());
             viewRegistrations.setVisible(true);
             setVisible(false);
         }
