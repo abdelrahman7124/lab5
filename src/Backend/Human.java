@@ -11,8 +11,19 @@ public abstract class Human extends Interface {
         this.phoneNumber = phoneNumber;
     }
 
-    protected String getSearchKey() {
+    public String getSearchKey() {
         return Id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 }
