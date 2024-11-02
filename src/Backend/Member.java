@@ -14,4 +14,12 @@ public class Member extends Human {
     public String lineRepresentation() {
         return (Id + "," + name + "," + membershipType + "," + email + "," + phoneNumber + "," + status);
     }
+
+    public String getMembershipType() {
+        return membershipType;
+    }
+
+    public String getStatus() {
+        return status;
+    }
 }
