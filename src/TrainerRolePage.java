@@ -42,8 +42,8 @@ public class TrainerRolePage extends JFrame{
         viewMembersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewMember viewMember = new ViewMember(role, role.getListOfMembers());
-                viewMember.setVisible(true);
+                ViewMembers viewMembers = new ViewMembers(role, role.getListOfMembers());
+                viewMembers.setVisible(true);
             }
         });
 
