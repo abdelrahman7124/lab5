@@ -18,16 +18,16 @@ public class TrainerRole implements FileNames{
 
     }
 
-    public void addMember(String memberID, String name, String membershipType, String email, String phoneNumber, String status) {
-        memberDatabase.insertRecord(new Member(membershipType, status, memberID, name, email, phoneNumber));
+    public boolean addMember(String memberID, String name, String membershipType, String email, String phoneNumber, String status) {
+        return memberDatabase.insertRecord(new Member(membershipType, status, memberID, name, email, phoneNumber));
     }
 
     public ArrayList<Member> getListOfMembers() {
         return memberDatabase.returnAllRecords();
     }
 
-    public void addClass(String classID, String className, String trainerID, int duration, int maxParticipants) {
-        classDatabase.insertRecord(new Class(classID, className, trainerID, duration, maxParticipants));
+    public boolean addClass(String classID, String className, String trainerID, int duration, int maxParticipants) {
+        return classDatabase.insertRecord(new Class(classID, className, trainerID, duration, maxParticipants, maxParticipants));
     }
 
     public ArrayList<Class> getListOfClasses() {
