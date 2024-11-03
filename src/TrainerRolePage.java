@@ -63,7 +63,7 @@ public class TrainerRolePage extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 addMember.setVisible(true);
-
+                setVisible(false);
             }
         });
 
@@ -72,7 +72,6 @@ public class TrainerRolePage extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 ViewMembers viewMembers = new ViewMembers(role, role.getListOfMembers(),TrainerRolePage.this);
                 viewMembers.setVisible(true);
-                setVisible(false);
             }
         });
 
@@ -89,7 +88,6 @@ public class TrainerRolePage extends JFrame{
         public void actionPerformed(ActionEvent e) {
             ViewClasses viewClasses = new ViewClasses(role, role.getListOfClasses(),TrainerRolePage.this);
             viewClasses.setVisible(true);
-            setVisible(false);
         }
     });
 
@@ -114,7 +112,6 @@ public class TrainerRolePage extends JFrame{
         public void actionPerformed(ActionEvent e) {
             ViewRegistrations viewRegistrations = new ViewRegistrations(role, role.getListOfRegistrations(),TrainerRolePage.this);
             viewRegistrations.setVisible(true);
-            setVisible(false);
         }
     });
 
