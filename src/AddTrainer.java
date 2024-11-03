@@ -78,7 +78,7 @@ public class AddTrainer extends JFrame {
                     if (bool) {
                         JOptionPane.showMessageDialog(null, "The Trainer with id=" + id + " was added successfully.");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Cannot add trainer with id=" + id);
+                        JOptionPane.showMessageDialog(null, "The Trainer with id=" + id + " already exists!");
                     }
                 }
                 IdField1.setText("");
