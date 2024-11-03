@@ -20,7 +20,7 @@ public class ClassDatabase extends DataBase<Class> {
     @Override
     public Class createRecordFrom(String line) {
         String[] tok = line.split(",");
-        return new Class(tok[0], tok[1], tok[2], Integer.parseInt(tok[3]), Integer.parseInt(tok[4]), Integer.parseInt(tok[5]));
+        return new Class(tok[0], tok[1], tok[2], Integer.parseInt(tok[3]), Integer.parseInt(tok[4]));
     }
 
 }
