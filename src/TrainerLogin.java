@@ -49,7 +49,9 @@ public class TrainerLogin extends JFrame implements LoginCredentials, KeyListene
             public void actionPerformed(ActionEvent e) {
                 String username = textField1.getText();
                 String password = passwordField1.getText();
-                if (!username.equalsIgnoreCase(TRAINER_USERNAME) || !password.equals(TRAINER_PASSWORD)) {
+                if (username.isEmpty() || password.isEmpty())
+                    JOptionPane.showMessageDialog(container, "Some fields are empty");
+                else if (!username.equalsIgnoreCase(TRAINER_USERNAME) || !password.equals(TRAINER_PASSWORD)) {
                     JOptionPane.showMessageDialog(container, "Wrong username or password");
                 } else {
                     TrainerRolePage trainerRolePage = new TrainerRolePage();

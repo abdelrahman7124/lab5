@@ -56,7 +56,7 @@ public class CancelRegistration extends JFrame {
                     if (isCancelled)
                         JOptionPane.showMessageDialog(null, "The Member with id = " + memberId + " has been unregistered from class " + classId);
                     else
-                        JOptionPane.showMessageDialog(null, "Registration of Member with id " + memberId + " for class " + classId + " is already cancelled");
+                        JOptionPane.showMessageDialog(null, "Cannot Cancel Registration of Member with id " + memberId + " for class " + classId);
 
                 }
                 setVisible(false);

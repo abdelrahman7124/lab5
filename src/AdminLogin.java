@@ -51,7 +51,9 @@ public class AdminLogin extends JFrame implements LoginCredentials, KeyListener 
             public void actionPerformed(ActionEvent e) {
                 String username = textField1.getText();
                 String password = textField2.getText();
-                if (!username.equalsIgnoreCase(ADMIN_USERNAME) || !password.equalsIgnoreCase(ADMIN_PASSWORD)) {
+                if (username.isEmpty() || password.isEmpty())
+                    JOptionPane.showMessageDialog(container, "Some fields are empty");
+                else if (!username.equalsIgnoreCase(ADMIN_USERNAME) || !password.equalsIgnoreCase(ADMIN_PASSWORD)) {
                     JOptionPane.showMessageDialog(container, "Wrong UserName or Password");
                 } else {
                     AdminRolePage adminRolePage = new AdminRolePage();
