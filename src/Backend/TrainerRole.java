@@ -4,8 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-
-public class TrainerRole implements FileNames{
+public class TrainerRole implements FileNames {
 
     private MemberDatabase memberDatabase;
     private ClassDatabase classDatabase;
@@ -83,12 +82,15 @@ public class TrainerRole implements FileNames{
     }
 
     public boolean checkIfCanceled(String memberID, String classID) {
-        MemberClassRegistration mcr = registrationDatabase.getRecord(memberID + "-" + classID);
-        String tok[] = mcr.lineRepresentation().split(",");
-        if (tok[3].equalsIgnoreCase("canceled")) {
-            return true;
+        if (registrationDatabase.contains(memberID + "-" + classID)) {
+            MemberClassRegistration mcr = registrationDatabase.getRecord(memberID + "-" + classID);
+            String tok[] = mcr.lineRepresentation().split(",");
+            if (tok[3].equalsIgnoreCase("canceled")) {
+                return true;
+            }
         }
         return false;
+
     }
 
     private void modifyAvailableSeats(int choice, String classID) {
