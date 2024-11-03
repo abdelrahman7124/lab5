@@ -35,14 +35,14 @@ public class TrainerRolePage extends JFrame{
         container = new JPanel();
         container.setLayout(null);
 
-        addMemberButton.setBounds(170, 50, 150, 40);
-        viewMembersButton.setBounds(170, 100, 150, 40);
-        addClassButton.setBounds(170, 150, 150, 40);
-        viewClassesButton.setBounds(170, 200, 150, 40);
-        registerMemberForClassButton.setBounds(170, 250, 150, 40);
-        cancelRegistrationButton.setBounds(170, 300, 150, 40);
-        viewRegistrationsButton.setBounds(170, 350, 150, 40);
-        logoutButton.setBounds(170, 400, 150, 40);
+        addMemberButton.setBounds(200, 50, 300, 50);
+        viewMembersButton.setBounds(200, 100, 300, 50);
+        addClassButton.setBounds(200, 150, 300, 50);
+        viewClassesButton.setBounds(200, 200, 300, 50);
+        registerMemberForClassButton.setBounds(200, 250, 300, 50);
+        cancelRegistrationButton.setBounds(200, 300, 300, 50);
+        viewRegistrationsButton.setBounds(200, 350, 300, 50);
+        logoutButton.setBounds(200, 400, 300, 50);
 
         container.add(addMemberButton);
         container.add(viewMembersButton);
@@ -54,7 +54,7 @@ public class TrainerRolePage extends JFrame{
         container.add(logoutButton);
 
         setContentPane(container);
-        setSize(500, 500);
+        setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Trainer Role");
@@ -63,7 +63,7 @@ public class TrainerRolePage extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 addMember.setVisible(true);
-                setVisible(false);
+
             }
         });
 
