@@ -82,14 +82,14 @@ public class AddClass extends JFrame {
                         JOptionPane.showMessageDialog(null, "Class with id = " + classId + " was added successfully");
                     else
                         JOptionPane.showMessageDialog(null, "Class with id = " + classId + " already exists");
-                    setVisible(false);
-                    trainerRolePage.setVisible(true);
-                    classIdTextField.setText("");
-                    classNameTextField.setText("");
-                    trainerIdTextField.setText("");
-                    durationTextField.setText("");
-                    maxParticipantsTextField.setText("");
                 }
+                setVisible(false);
+                trainerRolePage.setVisible(true);
+                classIdTextField.setText("");
+                classNameTextField.setText("");
+                trainerIdTextField.setText("");
+                durationTextField.setText("");
+                maxParticipantsTextField.setText("");
             }
         });
 
