@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.time.LocalDate;
 
-public class RegisterMemberForClass extends JFrame {
+public class RegisterMemberForClass extends JFrame implements  KeyListener {
     private JPanel container;
     private JTextField memberIdTextField;
     private JTextField classIdTextField;
@@ -15,6 +15,7 @@ public class RegisterMemberForClass extends JFrame {
         memberIdTextField = new JTextField();
         classIdTextField = new JTextField();
         registrationDateTextField = new JTextField();
+        registrationDateTextField.setText(LocalDate.now()+"");
         registerButton = new JButton("Register");
 
         container = new JPanel();
@@ -46,6 +47,7 @@ public class RegisterMemberForClass extends JFrame {
         setContentPane(container);
         setSize(500, 500);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Register Member for Class");
 
         registerButton.addActionListener(new ActionListener() {
@@ -72,5 +74,22 @@ public class RegisterMemberForClass extends JFrame {
                 }
             }
         });
+    }
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            registerButton.doClick();
+        }
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

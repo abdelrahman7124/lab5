@@ -30,7 +30,7 @@ public class ViewClasses extends JFrame implements KeyListener {
         model.addColumn("Max Participants");
 
         for (Class theClass : classes) {
-            model.addRow(new Object[]{theClass.getSearchKey(), theClass.getClassName(), theClass.getTrainerID(), theClass.getDuration(), theClass.getMaxParticipants()});
+            model.addRow(new Object[]{theClass.getSearchKey(), theClass.getClassName(), theClass.getTrainerID(), theClass.getDuration(), theClass.getAvailableSeats()});
         }
 
         table1.setModel(model);
