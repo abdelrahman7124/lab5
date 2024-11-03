@@ -40,6 +40,7 @@ public class ViewMembers extends JFrame implements KeyListener {
         setTitle("View Members");
         setSize(500, 500);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(container);
     }
     @Override

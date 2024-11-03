@@ -41,6 +41,7 @@ public class ViewTrainers extends JFrame implements KeyListener {
         setTitle("View Trainers");
         setContentPane(container);
         setSize(500, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
     }

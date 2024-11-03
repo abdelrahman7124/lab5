@@ -41,7 +41,7 @@ public class AdminLogin extends JFrame implements LoginCredentials, KeyListener 
 
         setTitle("Admin Login");
         setContentPane(container);
-        setSize(500,500);
+        setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -51,10 +51,9 @@ public class AdminLogin extends JFrame implements LoginCredentials, KeyListener 
             public void actionPerformed(ActionEvent e) {
                 String username = textField1.getText();
                 String password = textField2.getText();
-                if(!username.equalsIgnoreCase(ADMIN_USERNAME) || !password.equalsIgnoreCase(ADMIN_PASSWORD)) {
+                if (!username.equalsIgnoreCase(ADMIN_USERNAME) || !password.equalsIgnoreCase(ADMIN_PASSWORD)) {
                     JOptionPane.showMessageDialog(container, "Wrong UserName or Password");
-                }
-                else {
+                } else {
                     AdminRolePage adminRolePage = new AdminRolePage();
                     adminRolePage.setVisible(true);
                     setVisible(false);
@@ -71,7 +70,7 @@ public class AdminLogin extends JFrame implements LoginCredentials, KeyListener 
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             loginButton.doClick();
         }
 
@@ -81,4 +80,5 @@ public class AdminLogin extends JFrame implements LoginCredentials, KeyListener 
     public void keyReleased(KeyEvent e) {
 
     }
+}
 

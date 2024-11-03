@@ -58,9 +58,9 @@ public class AdminRolePage extends JFrame {
         viewTrainersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewTrainers viewTrainers = new ViewTrainers(role,role.getListOfTrainers());
+                ViewTrainers viewTrainers = new ViewTrainers(role,role.getListOfTrainers(),AdminRolePage.this);
                 viewTrainers.setVisible(true);
-                //setVisible(false);
+                setVisible(false);
             }
         });
         logoutButton.addActionListener(new ActionListener() {
