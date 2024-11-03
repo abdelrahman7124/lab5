@@ -57,6 +57,8 @@ public class TrainerRole implements FileNames{
                 LocalDate d2 = LocalDate.now();
                 if (diffBetweenDays(d1, d2)) {
                     registrationDatabase.getRecord(memberID + "-" + classID).setRegistrationStatus("canceled");
+                    registrationDatabase.deleteRecord(memberID + "-" + classID);
+                    registrationDatabase.saveToFile();
                     modifyAvailableSeats(1, classID);
                     return true;
                 }

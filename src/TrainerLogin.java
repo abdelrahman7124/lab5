@@ -70,6 +70,11 @@ public class TrainerLogin extends JFrame implements LoginCredentials, KeyListene
         if(e.getKeyCode() == KeyEvent.VK_ENTER) {
             loginButton.doClick();
         }
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            setVisible(false);
+            HomePage homePage = new HomePage();
+            homePage.setVisible(true);
+        }
 
     }
 
