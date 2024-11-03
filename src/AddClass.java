@@ -110,9 +110,6 @@ public class AddClass extends JFrame implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            addClassButton.doClick();
-        }
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
             setVisible(false);
             trainerRolePage.setVisible(true);
