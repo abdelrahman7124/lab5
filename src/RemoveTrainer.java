@@ -43,11 +43,15 @@ public class RemoveTrainer extends JFrame implements KeyListener{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = textField1.getText();
-                if(role.removeTrainer(id)) {
+                if (id.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null, "Please enter a trainer id");
+                }
+                else if(role.removeTrainer(id)) {
                     JOptionPane.showMessageDialog(null, "Trainer removed");
                 }
                 else {
-                    JOptionPane.showMessageDialog(null, "Trainer not removed");
+                    JOptionPane.showMessageDialog(null, "No trainer with id = "+id);
                 }
                 textField1.setText("");
                 adminRolePage.setVisible(true);
