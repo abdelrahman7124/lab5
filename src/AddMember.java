@@ -91,15 +91,15 @@ public class AddMember extends JFrame {
                         JOptionPane.showMessageDialog(null, "The member with id = " + id + " was added successfully");
                     else
                         JOptionPane.showMessageDialog(null, "The member with id = " + id + " already exists");
-                    idTextField.setText("");
-                    nameTextField.setText("");
-                    emailTextField.setText("");
-                    membershipTypeTextField.setText("");
-                    statusTextField.setText("");
-                    phoneNumberTextField.setText("");
-                    setVisible(false);
-                    trainerRolePage.setVisible(true);
                 }
+                idTextField.setText("");
+                nameTextField.setText("");
+                emailTextField.setText("");
+                membershipTypeTextField.setText("");
+                statusTextField.setText("");
+                phoneNumberTextField.setText("");
+                setVisible(false);
+                trainerRolePage.setVisible(true);
             }
         });
     }
