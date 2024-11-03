@@ -21,6 +21,7 @@ public class HomePage extends JFrame {
         container.add(adminButton);
         container.add(trainerButton);
 
+        setTitle("Gym System");
         setVisible(true);
         setContentPane(container);
         setSize(500,500);
