@@ -62,13 +62,15 @@ public class CancelRegistration extends JFrame implements KeyListener {
 
                     if (isCancelled)
                         JOptionPane.showMessageDialog(null, "The Member with id = " + memberId + " has been unregistered from class " + classId);
-                    else
+                    else if (role.checkIfCanceled(memberId, classId))
                         JOptionPane.showMessageDialog(null, "Registration of Member with id " + memberId + " for class " + classId + " is already cancelled");
-                    setVisible(false);
-                    trainerRolePage.setVisible(true);
-                    memberIdTextField.setText("");
-                    classIdTextField.setText("");
+                    else
+                        JOptionPane.showMessageDialog(null, "Member with id " + memberId + " is not registered in class with id  " + classId);
                 }
+                setVisible(false);
+                trainerRolePage.setVisible(true);
+                memberIdTextField.setText("");
+                classIdTextField.setText("");
             }
         });
     }

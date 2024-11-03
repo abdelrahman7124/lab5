@@ -73,11 +73,11 @@ public class RegisterMemberForClass extends JFrame implements  KeyListener {
                     else
                         JOptionPane.showMessageDialog(null, "The class has no available seats");
                     setVisible(false);
-                    trainerRolePage.setVisible(true);
-                    memberIdTextField.setText("");
-                    classIdTextField.setText("");
-                    registrationDateTextField.setText(LocalDate.now()+"");
                 }
+                trainerRolePage.setVisible(true);
+                memberIdTextField.setText("");
+                classIdTextField.setText("");
+                registrationDateTextField.setText(LocalDate.now()+"");
             }
         });
     }
