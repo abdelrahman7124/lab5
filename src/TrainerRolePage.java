@@ -54,7 +54,7 @@ public class TrainerRolePage extends JFrame{
         container.add(logoutButton);
 
         setContentPane(container);
-        setSize(500, 500);
+        setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Trainer Role");
