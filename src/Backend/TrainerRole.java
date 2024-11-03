@@ -34,17 +34,14 @@ public class TrainerRole implements FileNames {
     }
 
     public boolean registerMemberForClass(String memberID, String classID, LocalDate registrationDate) {
-        if (classDatabase.contains(classID)) {
+        if (classDatabase.contains(classID) && memberDatabase.contains(memberID)) {
             if (classDatabase.getRecord(classID).getAvailableSeats() > 0) {
                 registrationDatabase.insertRecord(new MemberClassRegistration(memberID, classID, "ِactive", registrationDate));
                 modifyAvailableSeats(2, classID);
                 return true;
-            } else {
-                return false;
             }
-        } else {
-            return false;
         }
+        return false;
     }
 
     public boolean cancelRegistration(String memberID, String classID) {
@@ -91,6 +88,10 @@ public class TrainerRole implements FileNames {
         }
         return false;
 
+    }
+    public boolean containsMember(String memberID)
+    {
+        return memberDatabase.contains(memberID);
     }
 
     private void modifyAvailableSeats(int choice, String classID) {

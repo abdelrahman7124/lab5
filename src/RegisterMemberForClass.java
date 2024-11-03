@@ -70,6 +70,8 @@ public class RegisterMemberForClass extends JFrame implements  KeyListener {
 
                     if (isRegistered)
                         JOptionPane.showMessageDialog(null, "The Member with id = " + memberId + " has successfully registered to class " + classId);
+                    else if (!role.containsMember(memberId))
+                        JOptionPane.showMessageDialog(RegisterMemberForClass.this, "Member with id = " + memberId + " does not exists");
                     else
                         JOptionPane.showMessageDialog(null, "The class has no available seats");
                     setVisible(false);
