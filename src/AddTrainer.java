@@ -107,6 +107,10 @@ public class AddTrainer extends JFrame implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ENTER)
+        {
+            addButton.doClick();
+        }
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
             setVisible(false);
             adminRolePage.setVisible(true);

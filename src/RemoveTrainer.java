@@ -61,6 +61,9 @@ public class RemoveTrainer extends JFrame implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+            removeButton.doClick();
+        }
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
             setVisible(false);
             adminRolePage.setVisible(true);
