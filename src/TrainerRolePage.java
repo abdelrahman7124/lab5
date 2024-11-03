@@ -35,14 +35,14 @@ public class TrainerRolePage extends JFrame{
         container = new JPanel();
         container.setLayout(null);
 
-        addMemberButton.setBounds(170, 50, 300, 50);
-        viewMembersButton.setBounds(170, 100, 300, 50);
-        addClassButton.setBounds(170, 150, 300, 50);
-        viewClassesButton.setBounds(170, 200, 300, 50);
-        registerMemberForClassButton.setBounds(170, 250, 300, 50);
-        cancelRegistrationButton.setBounds(170, 300, 300, 50);
-        viewRegistrationsButton.setBounds(170, 350, 300, 50);
-        logoutButton.setBounds(170, 400, 300, 50);
+        addMemberButton.setBounds(200, 50, 300, 50);
+        viewMembersButton.setBounds(200, 100, 300, 50);
+        addClassButton.setBounds(200, 150, 300, 50);
+        viewClassesButton.setBounds(200, 200, 300, 50);
+        registerMemberForClassButton.setBounds(200, 250, 300, 50);
+        cancelRegistrationButton.setBounds(200, 300, 300, 50);
+        viewRegistrationsButton.setBounds(200, 350, 300, 50);
+        logoutButton.setBounds(200, 400, 300, 50);
 
         container.add(addMemberButton);
         container.add(viewMembersButton);
@@ -63,7 +63,7 @@ public class TrainerRolePage extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 addMember.setVisible(true);
-                setVisible(false);
+
             }
         });
 
