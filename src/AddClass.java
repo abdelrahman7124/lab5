@@ -60,6 +60,7 @@ public class AddClass extends JFrame {
         setContentPane(container);
         setSize(500, 500);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Add Class");
 
         addClassButton.addActionListener(new ActionListener() {

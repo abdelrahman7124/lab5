@@ -3,17 +3,22 @@ import Backend.TrainerRole;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-public class ViewMembers extends JFrame {
+public class ViewMembers extends JFrame implements KeyListener {
     private JPanel container;
     private JTable table1;
     private JScrollPane scrollPane;
+    private TrainerRolePage trainerRolePage;
 
-    public ViewMembers(TrainerRole role, ArrayList<Member> members) {
+    public ViewMembers(TrainerRole role, ArrayList<Member> members,TrainerRolePage trainerRolePage) {
+        this.trainerRolePage = trainerRolePage;
         container = new JPanel();
         table1 = new JTable();
         scrollPane = new JScrollPane(table1);
+        table1.addKeyListener(this);
 
         container.add(scrollPane);
 
@@ -35,6 +40,22 @@ public class ViewMembers extends JFrame {
         setTitle("View Members");
         setSize(500, 500);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(container);
+    }
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        trainerRolePage.setVisible(true);
+        setVisible(false);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

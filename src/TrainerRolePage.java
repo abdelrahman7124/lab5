@@ -35,6 +35,7 @@ public class TrainerRolePage extends JFrame{
         container = new JPanel();
         container.setLayout(null);
 
+<<<<<<< HEAD
         addMemberButton.setBounds(200, 50, 300, 50);
         viewMembersButton.setBounds(200, 100, 300, 50);
         addClassButton.setBounds(200, 150, 300, 50);
@@ -43,6 +44,16 @@ public class TrainerRolePage extends JFrame{
         cancelRegistrationButton.setBounds(200, 300, 300, 50);
         viewRegistrationsButton.setBounds(200, 350, 300, 50);
         logoutButton.setBounds(200, 400, 300, 50);
+=======
+        addMemberButton.setBounds(170, 50, 150, 40);
+        viewMembersButton.setBounds(170, 100, 150, 40);
+        addClassButton.setBounds(170, 150, 150, 40);
+        viewClassesButton.setBounds(170, 200, 150, 40);
+        registerMemberForClassButton.setBounds(170, 250, 150, 40);
+        cancelRegistrationButton.setBounds(170, 300, 150, 40);
+        viewRegistrationsButton.setBounds(170, 350, 150, 40);
+        logoutButton.setBounds(170, 400, 150, 40);
+>>>>>>> a2417e10816fb402a7d6817bfa6a3b53d6d41205
 
         container.add(addMemberButton);
         container.add(viewMembersButton);
@@ -70,8 +81,9 @@ public class TrainerRolePage extends JFrame{
         viewMembersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewMembers viewMembers = new ViewMembers(role, role.getListOfMembers());
+                ViewMembers viewMembers = new ViewMembers(role, role.getListOfMembers(),TrainerRolePage.this);
                 viewMembers.setVisible(true);
+                setVisible(false);
             }
         });
 
@@ -86,8 +98,9 @@ public class TrainerRolePage extends JFrame{
     viewClassesButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            ViewClasses viewClasses = new ViewClasses(role, role.getListOfClasses());
+            ViewClasses viewClasses = new ViewClasses(role, role.getListOfClasses(),TrainerRolePage.this);
             viewClasses.setVisible(true);
+            setVisible(false);
         }
     });
 
@@ -110,7 +123,7 @@ public class TrainerRolePage extends JFrame{
     viewRegistrationsButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            ViewRegistrations viewRegistrations = new ViewRegistrations(role, role.getListOfRegistrations());
+            ViewRegistrations viewRegistrations = new ViewRegistrations(role, role.getListOfRegistrations(),TrainerRolePage.this);
             viewRegistrations.setVisible(true);
             setVisible(false);
         }
