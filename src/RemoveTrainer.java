@@ -41,7 +41,7 @@ public class RemoveTrainer extends JFrame {
                     JOptionPane.showMessageDialog(null, "Trainer removed");
                 }
                 else {
-                    JOptionPane.showMessageDialog(null, "Trainer not removed");
+                    JOptionPane.showMessageDialog(null, "Cannot remove trainer");
                 }
                 textField1.setText("");
                 adminRolePage.setVisible(true);
