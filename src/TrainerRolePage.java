@@ -35,14 +35,14 @@ public class TrainerRolePage extends JFrame{
         container = new JPanel();
         container.setLayout(null);
 
-        addMemberButton.setBounds(200, 50, 300, 40);
-        viewMembersButton.setBounds(200, 100, 300, 40);
-        addClassButton.setBounds(200, 150, 300, 40);
-        viewClassesButton.setBounds(200, 200, 300, 40);
-        registerMemberForClassButton.setBounds(200, 250, 300, 40);
-        cancelRegistrationButton.setBounds(200, 300, 300, 40);
-        viewRegistrationsButton.setBounds(200, 350, 300, 40);
-        logoutButton.setBounds(200, 400, 300, 40);
+        addMemberButton.setBounds(105, 50, 300, 40);
+        viewMembersButton.setBounds(105, 100, 300, 40);
+        addClassButton.setBounds(105, 150, 300, 40);
+        viewClassesButton.setBounds(105, 200, 300, 40);
+        registerMemberForClassButton.setBounds(105, 250, 300, 40);
+        cancelRegistrationButton.setBounds(105, 300, 300, 40);
+        viewRegistrationsButton.setBounds(105, 350, 300, 40);
+        logoutButton.setBounds(105, 400, 300, 40);
 
         container.add(addMemberButton);
         container.add(viewMembersButton);
@@ -54,7 +54,7 @@ public class TrainerRolePage extends JFrame{
         container.add(logoutButton);
 
         setContentPane(container);
-        setSize(700, 500);
+        setSize(500, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Trainer Role");
