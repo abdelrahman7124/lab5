@@ -2,19 +2,23 @@ import Backend.AdminRole;
 import Backend.Trainer;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-public class ViewTrainers extends JFrame {
+public class ViewTrainers extends JFrame implements KeyListener {
     private JPanel container;
     private JScrollPane scrollPane;
     private JTable table1;
+    private AdminRolePage adminRolePage;
 
 
-    public ViewTrainers(AdminRole role,ArrayList<Trainer> trainers) {
+    public ViewTrainers(AdminRole role,ArrayList<Trainer> trainers,AdminRolePage adminRolePage) {
+        this.adminRolePage = adminRolePage;
         container = new JPanel();
         table1 = new JTable();
         scrollPane = new JScrollPane(table1);
-        //container.setLayout(null);
+        table1.addKeyListener(this);
         container.add(scrollPane);
 
         // Initialize the GUI components
@@ -40,4 +44,20 @@ public class ViewTrainers extends JFrame {
         setLocationRelativeTo(null);
 
     }
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+            adminRolePage.setVisible(true);
+            setVisible(false);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
 }
