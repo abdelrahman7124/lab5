@@ -38,7 +38,6 @@ public class ViewClasses extends JFrame implements KeyListener {
         setContentPane(container);
         setSize(500, 500);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("View Classes");
     }
     @Override
