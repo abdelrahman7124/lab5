@@ -68,6 +68,7 @@ public class AddMember extends JFrame {
         setContentPane(container);
         setSize(500, 500);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Add Member");
 
         addMemberButton.addActionListener(new ActionListener() {
