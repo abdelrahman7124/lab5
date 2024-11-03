@@ -82,7 +82,7 @@ public class TrainerRole implements FileNames{
         return Math.abs(daysBetween) <= 3;
     }
 
-    private boolean checkIfCanceled(String memberID, String classID) {
+    public boolean checkIfCanceled(String memberID, String classID) {
         MemberClassRegistration mcr = registrationDatabase.getRecord(memberID + "-" + classID);
         String tok[] = mcr.lineRepresentation().split(",");
         if (tok[3].equalsIgnoreCase("canceled")) {
