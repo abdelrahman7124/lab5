@@ -2,8 +2,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Backend.AdminRole;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class AddTrainer extends JFrame {
+public class AddTrainer extends JFrame implements KeyListener{
     private JTextField IdField1;
     private JTextField NameField2;
     private JTextField EmailField3;
@@ -11,9 +13,11 @@ public class AddTrainer extends JFrame {
     private JTextField NumberField5;
     private JButton addButton;
     private JPanel container;
+    private AdminRolePage adminRolePage;
 
 
     public AddTrainer(AdminRole role,AdminRolePage adminRolePage) {
+        this.adminRolePage = adminRolePage;
         IdField1 = new JTextField();
         NameField2 = new JTextField();
         EmailField3 = new JTextField();
@@ -21,6 +25,12 @@ public class AddTrainer extends JFrame {
         NumberField5 = new JTextField();
         addButton = new JButton("Add Trainer");
         container = new JPanel();
+
+        IdField1.addKeyListener(this);
+        NameField2.addKeyListener(this);
+        EmailField3.addKeyListener(this);
+        SpecialityField4.addKeyListener(this);
+        NumberField5.addKeyListener(this);
 
         JLabel idLabel = new JLabel("ID");
         JLabel nameLabel = new JLabel("Name");
@@ -78,7 +88,7 @@ public class AddTrainer extends JFrame {
                     if (bool) {
                         JOptionPane.showMessageDialog(null, "The Trainer with id=" + id + " was added successfully.");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Cannot add trainer with id=" + id);
+                        JOptionPane.showMessageDialog(null, "The Trainer with id=" + id + " already exists!");
                     }
                 }
                 IdField1.setText("");
@@ -90,5 +100,22 @@ public class AddTrainer extends JFrame {
                 setVisible(false);
             }
         });
+    }
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            setVisible(false);
+            adminRolePage.setVisible(true);
+        }
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

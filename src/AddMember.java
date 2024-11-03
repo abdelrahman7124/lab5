@@ -4,8 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class AddMember extends JFrame {
+public class AddMember extends JFrame implements KeyListener{
     private JPanel container;
     private JButton addMemberButton;
     private JTextField idTextField;
@@ -14,8 +16,10 @@ public class AddMember extends JFrame {
     private JTextField membershipTypeTextField;
     private JTextField phoneNumberTextField;
     private JTextField statusTextField;
+    private TrainerRolePage trainerRolePage;
 
     public AddMember(TrainerRole role, TrainerRolePage trainerRolePage) {
+        this.trainerRolePage = trainerRolePage;
         idTextField = new JTextField();
         nameTextField = new JTextField();
         emailTextField = new JTextField();
@@ -34,6 +38,15 @@ public class AddMember extends JFrame {
         JLabel status = new JLabel("Status");
 
         container.setLayout(null);
+
+        addMemberButton.addKeyListener(this);
+        idTextField.addKeyListener(this);
+        nameTextField.addKeyListener(this);
+        emailTextField.addKeyListener(this);
+        membershipTypeTextField.addKeyListener(this);
+        phoneNumberTextField.addKeyListener(this);
+        statusTextField.addKeyListener(this);
+
 
         id.setBounds(100,100,150,30);
         name.setBounds(100,150,150,30);
@@ -90,17 +103,38 @@ public class AddMember extends JFrame {
                     if (isAdded)
                         JOptionPane.showMessageDialog(null, "The member with id = " + id + " was added successfully");
                     else
-                        JOptionPane.showMessageDialog(null, "Cannot add member with id = " + id);
+                        JOptionPane.showMessageDialog(null, "The member with id = " + id + " already exists");
+                    idTextField.setText("");
+                    nameTextField.setText("");
+                    emailTextField.setText("");
+                    membershipTypeTextField.setText("");
+                    statusTextField.setText("");
+                    phoneNumberTextField.setText("");
+                    setVisible(false);
+                    trainerRolePage.setVisible(true);
                 }
-                idTextField.setText("");
-                nameTextField.setText("");
-                emailTextField.setText("");
-                membershipTypeTextField.setText("");
-                statusTextField.setText("");
-                phoneNumberTextField.setText("");
-                setVisible(false);
-                trainerRolePage.setVisible(true);
             }
         });
+    }
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            addMemberButton.doClick();
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            setVisible(false);
+            trainerRolePage.setVisible(true);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

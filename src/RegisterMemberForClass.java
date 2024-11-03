@@ -10,8 +10,10 @@ public class RegisterMemberForClass extends JFrame implements  KeyListener {
     private JTextField classIdTextField;
     private JTextField registrationDateTextField;
     private JButton registerButton;
+    private TrainerRolePage trainerRolePage;
 
     public RegisterMemberForClass(TrainerRole role, TrainerRolePage trainerRolePage) {
+        this.trainerRolePage = trainerRolePage;
         memberIdTextField = new JTextField();
         classIdTextField = new JTextField();
         registrationDateTextField = new JTextField();
@@ -19,6 +21,10 @@ public class RegisterMemberForClass extends JFrame implements  KeyListener {
         registerButton = new JButton("Register");
 
         container = new JPanel();
+
+        memberIdTextField.addKeyListener(this);
+        registrationDateTextField.addKeyListener(this);
+        classIdTextField.addKeyListener(this);
 
         JLabel memberIdLabel = new JLabel("Member Id");
         JLabel classIdLabel = new JLabel("Class Id");
@@ -65,13 +71,13 @@ public class RegisterMemberForClass extends JFrame implements  KeyListener {
                     if (isRegistered)
                         JOptionPane.showMessageDialog(null, "The Member with id = " + memberId + " has successfully registered to class " + classId);
                     else
-                        JOptionPane.showMessageDialog(null, "Cannot Register Member with id = " + memberId + " for Class with id = " + classId);
+                        JOptionPane.showMessageDialog(null, "The class has no available seats");
+                    setVisible(false);
+                    trainerRolePage.setVisible(true);
+                    memberIdTextField.setText("");
+                    classIdTextField.setText("");
+                    registrationDateTextField.setText(LocalDate.now()+"");
                 }
-                setVisible(false);
-                trainerRolePage.setVisible(true);
-                memberIdTextField.setText("");
-                classIdTextField.setText("");
-                registrationDateTextField.setText(LocalDate.now()+"");
             }
         });
     }
@@ -84,6 +90,10 @@ public class RegisterMemberForClass extends JFrame implements  KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             registerButton.doClick();
+        }
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            setVisible(false);
+            trainerRolePage.setVisible(true);
         }
 
     }

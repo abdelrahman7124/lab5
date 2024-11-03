@@ -3,14 +3,18 @@ import Backend.TrainerRole;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class CancelRegistration extends JFrame {
+public class CancelRegistration extends JFrame implements KeyListener {
     private JPanel container;
     private JTextField memberIdTextField;
     private JTextField classIdTextField;
     private JButton cancelRegisterationButton;
+    private TrainerRolePage trainerRolePage;
 
     public CancelRegistration(TrainerRole role, TrainerRolePage trainerRolePage) {
+        this.trainerRolePage = trainerRolePage;
         memberIdTextField = new JTextField();
         classIdTextField = new JTextField();
         cancelRegisterationButton = new JButton("Cancel Registration");
@@ -21,6 +25,9 @@ public class CancelRegistration extends JFrame {
         JLabel classIdLabel = new JLabel("Class Id");
 
         container.setLayout(null);
+
+        memberIdTextField.addKeyListener(this);
+        classIdTextField.addKeyListener(this);
 
         memberIdLabel.setBounds(100,100,150,30);
         classIdLabel.setBounds(100,150,150,30);
@@ -56,14 +63,33 @@ public class CancelRegistration extends JFrame {
                     if (isCancelled)
                         JOptionPane.showMessageDialog(null, "The Member with id = " + memberId + " has been unregistered from class " + classId);
                     else
-                        JOptionPane.showMessageDialog(null, "Cannot Cancel Registration of Member with id " + memberId + " for class " + classId);
-
+                        JOptionPane.showMessageDialog(null, "Registration of Member with id " + memberId + " for class " + classId + " is already cancelled");
+                    setVisible(false);
+                    trainerRolePage.setVisible(true);
+                    memberIdTextField.setText("");
+                    classIdTextField.setText("");
                 }
-                setVisible(false);
-                trainerRolePage.setVisible(true);
-                memberIdTextField.setText("");
-                classIdTextField.setText("");
             }
         });
+    }
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            cancelRegisterationButton.doClick();
+        }
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            setVisible(false);
+            trainerRolePage.setVisible(true);
+        }
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

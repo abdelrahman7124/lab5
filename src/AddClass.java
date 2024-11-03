@@ -3,8 +3,10 @@ import Backend.TrainerRole;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class AddClass extends JFrame {
+public class AddClass extends JFrame implements KeyListener{
     private JPanel container;
     private JTextField classIdTextField;
     private JTextField classNameTextField;
@@ -12,8 +14,10 @@ public class AddClass extends JFrame {
     private JTextField durationTextField;
     private JTextField maxParticipantsTextField;
     private JButton addClassButton;
+    private TrainerRolePage trainerRolePage;
 
     public AddClass(TrainerRole role, TrainerRolePage trainerRolePage) {
+        this.trainerRolePage = trainerRolePage;
         classIdTextField = new JTextField();
         classNameTextField  = new JTextField();
         trainerIdTextField = new JTextField();
@@ -22,6 +26,12 @@ public class AddClass extends JFrame {
         addClassButton = new JButton("Add Class");
 
         container = new JPanel();
+
+        classIdTextField.addKeyListener(this);
+        classNameTextField.addKeyListener(this);
+        trainerIdTextField.addKeyListener(this);
+        durationTextField.addKeyListener(this);
+        maxParticipantsTextField.addKeyListener(this);
 
         JLabel classId = new JLabel("Class Id");
         JLabel className = new JLabel("Class Name");
@@ -81,17 +91,37 @@ public class AddClass extends JFrame {
                     if(isAdded)
                         JOptionPane.showMessageDialog(null, "Class with id = " + classId + " was added successfully");
                     else
-                        JOptionPane.showMessageDialog(null, "Cannot add class with id = " + classId);
+                        JOptionPane.showMessageDialog(null, "Class with id = " + classId + " already exists");
+                    setVisible(false);
+                    trainerRolePage.setVisible(true);
+                    classIdTextField.setText("");
+                    classNameTextField.setText("");
+                    trainerIdTextField.setText("");
+                    durationTextField.setText("");
+                    maxParticipantsTextField.setText("");
                 }
-                setVisible(false);
-                trainerRolePage.setVisible(true);
-                classIdTextField.setText("");
-                classNameTextField.setText("");
-                trainerIdTextField.setText("");
-                durationTextField.setText("");
-                maxParticipantsTextField.setText("");
             }
         });
+
+    }
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            addClassButton.doClick();
+        }
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            setVisible(false);
+            trainerRolePage.setVisible(true);
+        }
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
 
     }
 }
