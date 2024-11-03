@@ -70,7 +70,7 @@ public class RegisterMemberForClass extends JFrame implements  KeyListener {
                     trainerRolePage.setVisible(true);
                     memberIdTextField.setText("");
                     classIdTextField.setText("");
-                    registrationDateTextField.setText("");
+                    registrationDateTextField.setText(LocalDate.now()+"");
                 }
             }
         });
