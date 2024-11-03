@@ -81,7 +81,7 @@ public class AddClass extends JFrame {
                     if(isAdded)
                         JOptionPane.showMessageDialog(null, "Class with id = " + classId + " was added successfully");
                     else
-                        JOptionPane.showMessageDialog(null, "Cannot add class with id = " + classId);
+                        JOptionPane.showMessageDialog(null, "Class with id = " + classId + " already exists");
                 }
                 setVisible(false);
                 trainerRolePage.setVisible(true);

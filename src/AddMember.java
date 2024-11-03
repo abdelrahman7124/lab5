@@ -90,7 +90,7 @@ public class AddMember extends JFrame {
                     if (isAdded)
                         JOptionPane.showMessageDialog(null, "The member with id = " + id + " was added successfully");
                     else
-                        JOptionPane.showMessageDialog(null, "Cannot add member with id = " + id);
+                        JOptionPane.showMessageDialog(null, "The member with id = " + id + " already exists");
                 }
                 idTextField.setText("");
                 nameTextField.setText("");
